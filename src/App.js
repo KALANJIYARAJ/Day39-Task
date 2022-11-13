@@ -3,12 +3,13 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { useState } from "react";
+import { config } from "./config";
 
 function App() {
   const [data, setData] = useState("");
   const createFolder = async () => {
     try {
-      const folder = await axios.get("http://localhost:3003/filecreate");
+      const folder = await axios.get(`${config}/filecreate`);
       setData(folder.data.message);
     } catch (error) {
       console.log("something Went wrong");
