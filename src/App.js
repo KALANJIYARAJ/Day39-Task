@@ -9,7 +9,7 @@ function App() {
   const [data, setData] = useState("");
   const createFolder = async () => {
     try {
-      const folder = await axios.get(`${config.api}/filecreate`);
+      const folder = await axios.get(`https://day39taskserver.herokuapp.com/filecreate`);
       setData(folder.data.message);
     } catch (error) {
       alert("something Went wrong");
