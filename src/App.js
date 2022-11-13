@@ -9,10 +9,10 @@ function App() {
   const [data, setData] = useState("");
   const createFolder = async () => {
     try {
-      const folder = await axios.get(`${config}/filecreate`);
+      const folder = await axios.get(`${config.api}/filecreate`);
       setData(folder.data.message);
     } catch (error) {
-      console.log("something Went wrong");
+      alert("something Went wrong");
     }
   };
 
